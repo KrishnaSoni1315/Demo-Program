@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8"/>
+	<title>Unique Number Finding</title>
+	<script type="text/javascript">
+	
+		var arr = ["A","B","B","D","D","A"];
+		var temp=[];
+		temp.push(arr[0]);
+
+			for(var i=0;i < arr.length;i++){
+				if (temp[i]!=arr[i+1]) 
+				{
+					temp.push(arr[i+1]);
+				}
+				else{
+					break;
+				}
+			}
+		console.log("FIRST DUPLICATE VALUE IS " + temp[i]);
+	</script>
+</head>
+<body>
+
+<div id="show"></div>
+</body>
+</html>
