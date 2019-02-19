@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Convert</title>
+<script type="text/javascript">
+
+function payOfCurrency() {
+
+  var num = input.value;
+  var arr=[2000, 500, 200, 100, 50, 20, 10, 5, 2, 1];
+  var str = '';
+  
+  for (var i=0; i<arr.length; i++) {
+    
+    if (num>=arr[i]) {
+      num = num - arr[i];
+      str = str + arr[i] + ', ';
+      i--;
+    }
+  }
+  input1.value = '  Coins: '+str.substring(0, str.length - 1);
+}
+
+</script>
+	
+</head>
+<body>
+<div style="border: 1px solid black">
+<center>
+<h2> <br>Your Amount Convert in : 2000, 500, 200, 100, 50, 20, 10, 5, 2, 1 </h2><br>
+
+<table>
+	<tr>
+		<td>
+			<span>Amount: </span>
+		</td>
+		<td>
+			<input type="text" id="input" style="width: 100px; height: 50px;"><br>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<span>Currency: </span>
+		</td>
+		<td>
+			<input type="text" id="input1" style="width: 500px; height: 50px;">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			
+		</td>
+		<td>
+			<button id="button" onclick="payOfCurrency()" >submit</button>
+		</td>
+	</tr>
+</table><br>
+</center>
+</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Unique Values</title>
+<script type="text/javascript">
+
+function uniqueNumber() {
+
+	var duplicatVal = document.getElementById('input').value;
+	var uniqueVal =[];
+	var j = 0;
+	var found = false;
+
+	for (var i = 0;i<duplicatVal.length ; i++) {
+		for (k=0; k < uniqueVal.length; k++) {
+			if (duplicatVal[i]==uniqueVal[k]) {
+				found=true;
+			}
+		}
+
+		j++;
+
+		if (j == 1 && found == false) {
+			uniqueVal.push(duplicatVal[i]);
+		}
+		j = 0;
+		found = false;
+	}
+	
+	document.getElementById('show').innerHTML = "<br/>"+uniqueVal;
+	document.getElementById('input').value = "";
+}
+
+</script>
+</head>
+<body>
+<div style="margin-top: 100px;">
+<center>
+	<input type="text" name="input[]" id="input">
+	<button onclick="uniqueNumber()">Get Unique Values</button><br>
+	<br><span>Duplicate Values Are</span>
+	<div id="show"></div>
+</center>
+</div>
+</body>
+</html>

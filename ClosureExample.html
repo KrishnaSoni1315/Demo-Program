@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Closure Example</title>
+	<script type="text/javascript">
+
+function Sum(val1) {//grandparent function
+
+  function Inner1(val2) {//parent function
+
+    function Inner2(val3) {//child function
+
+      return val1 + val2 + val3;
+    
+    }
+
+    return Inner2;
+
+  }
+
+  return Inner1;
+
+}
+
+		console.log(Sum(3)(4)(5));//closure example here
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
