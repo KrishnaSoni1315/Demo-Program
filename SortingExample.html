@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sorting Example</title>
+<script type="text/javascript">
+	var employees=[]
+	employees[0]={name:"KRISHNA", age:23, priority:2}
+	employees[1]={name:"JEENA", age:24, priority:5}
+	employees[2]={name:"SHRADDHA", age:24, priority:1}
+	employees[3]={name:"DEEWANGI", age:25, priority:4}
+
+	for (var i = 0; i< employees.length; i++){
+
+		if(employees[i].priority == 3) {
+			employees.sort(function (a, b)
+			{ 
+				return a.priority-b.priority;   //sorting by priority
+			});
+			break;
+		}
+		else{
+			employees.sort(function(a, b){ // sorting by Employee Name
+			var nameA=a.name.toLowerCase(), nameB=b.name.toLowerCase()
+			if (nameA < nameB) //sort string ascending
+		 		return -1 
+			if (nameA > nameB)
+				return 1
+			return 0
+			})
+		}
+	}
+	/*
+	employees.sort(function(a, b){ // sorting by age
+		return a.age-b.age
+		})
+	*/
+	document.write(JSON.stringify(employees, null, 4))
+</script>
+</head>
+</html>
