@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Fetching Data</title>
+	<script type="text/javascript">
+		
+		function dynamicIndexing() {
+			// body...
+			var table = document.getElementById('display');
+			var arr={
+				 fname:document.getElementById('name').value,
+				age:document.getElementById('age').value
+			};
+if(arr.age > 18 && arr.age <60 && arr.fname !==""){
+
+	var msg = prompt("Please Enter Your Priority","0");
+	var num = parseInt(msg);
+	var indexing = num;
+
+ var row = table.insertRow(indexing);
+ var cell1 = row.insertCell(0);
+ var cell2 = row.insertCell(1);
+
+ cell1.innerHTML = arr.fname;
+ cell2.innerHTML = arr.age;
+}// if condition
+else{
+	alert("Please Enter Your Proper Name Or Age");
+}
+		}// dynamicIndexing function
+	</script>
+</head>
+<body>
+<center>
+	<div>
+		<table>
+			<tr>
+				<td>Name</td>
+				<td><input type="text" id="name"></td>
+			</tr>
+			<tr>
+				<td>Age</td>
+				<td><input type="text" id="age"></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><button onclick="dynamicIndexing()">Indexing</button></td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		
+		<table >
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Age</th>
+				</tr>
+			</thead>
+			<tbody id="display">
+			</tbody>
+		</table>
+	</div>
+</center>
+</body>
+</html>
